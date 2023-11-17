@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { useForm } from "@mantine/hooks"
 import { Modal, Group, Button } from "@mantine/core"
 
