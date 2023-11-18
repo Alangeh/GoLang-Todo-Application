@@ -9,7 +9,7 @@ const fetcher = (url: string) => fetch(`${ENDPOINT}/${url}`).then((r) => r.json(
 
 function App() {
 
-  const { data, mutate } = useSWR("api/todos", fetcher)
+  const { data } = useSWR("api/todos", fetcher)
   return <Box> {JSON.stringify(data)}
   
   <AddTodo />
