@@ -1,16 +1,32 @@
 import { useState } from "react"
 
-import { Modal, Group, Button } from "@mantine/core"
+import { Modal, Group, Button, TextInput, Textarea } from "@mantine/core"
+
 
 function AddTodo() {
     const [open, setOpen] = useState(false);
 
+    function createTodo(){
+
+    }
     
 
     return (
         <>
          <Modal opened={open} onClose={() => setOpen(false)} title="Create Todo">
-                text
+                <form onSubmit={form.onSubmit(createTodo)}>
+                <TextInput 
+                    required
+                    mb={12}
+                    label="Todo"
+                    placeholder="what do you want to do?"
+                    {...form.getInputProps("title")}
+                />
+                <Textarea />
+
+                <Button type="submit">Create Todo</Button>
+                </form>
+               
             </Modal>
 
             <Group>
