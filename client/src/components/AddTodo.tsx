@@ -1,11 +1,17 @@
 import { useState } from "react"
-
+import { useForm } from '@mantine/form';
 import { Modal, Group, Button, TextInput, Textarea } from "@mantine/core"
 import { ENDPOINT, Todo } from "../App";
 import { KeyedMutator } from "swr";
 
 
 function AddTodo({mutate}: {mutate: KeyedMutator<Todo[]>}) {
+    const form = useForm({
+        initialValues: {
+            title: "",
+            body: ""
+        },
+    });
     const [open, setOpen] = useState(false);
 
     async function createTodo(values: {title:string, body: string}){
